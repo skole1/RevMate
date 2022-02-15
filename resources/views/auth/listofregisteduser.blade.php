@@ -5,62 +5,291 @@ Registered Users | Page
 @endsection
 
 @section('content')
-<div class="page-wrapper">
-    <div class="content container-fluid">
-        <div class="page-header mt-5">
-            <div class="row">
-                <div class="col">
-                    <h3 class="page-title">List of Registred User | Page</h3> </div>
+    <div class="page-wrapper">
+        <div class="content container-fluid">
+            <div class="page-header">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <div class="mt-5">
+                            <h4 class="card-title float-left mt-2">List of Registred User | Page</h4> <a href="#" class="btn btn-primary float-right veiwbutton" data-toggle="modal" data-target="#exampleModal">&nbsp;&nbsp;New&nbsp; &nbsp;</a> </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="datatable table table-stripped">
-                                <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Position</th>
-                                        <th>Office</th>
-                                        <th>Age</th>
-                                        <th>Start date</th>
-                                        <th>Salary</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Tiger Nixon</td>
-                                        <td>System Architect</td>
-                                        <td>Edinburgh</td>
-                                        <td>61</td>
-                                        <td>2011/04/25</td>
-                                        <td>$320,800</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Garrett Winters</td>
-                                        <td>Accountant</td>
-                                        <td>Tokyo</td>
-                                        <td>63</td>
-                                        <td>2011/07/25</td>
-                                        <td>$170,750</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Ashton Cox</td>
-                                        <td>Junior Technical Author</td>
-                                        <td>San Francisco</td>
-                                        <td>66</td>
-                                        <td>2009/01/12</td>
-                                        <td>$86,000</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card card-table">
+                        <div class="card-body booking_card">
+                            <div class="table-responsive">
+                                <table class="datatable table table-stripped table table-hover table-center mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Staff ID</th>
+                                            <th>Email</th>
+                                            <th>Ph.Number</th>
+                                            <th>Join Date</th>
+                                            <th>Leaving Time</th>
+                                            <th>On Duty</th>
+                                            <th>Role</th>
+                                            <th>Status</th>
+                                            <th class="text-right">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <h2 class="table-avatar">
+                                                <a href="profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/profiles/avatar-03.jpg" alt="User Image"></a>
+                                                <a href="profile.html">Tommy Bernal <span>#0001</span></a>
+                                                </h2>
+                                            </td>
+                                            <td>ST-001</td>
+                                            <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ea9e85878793888f98848b86aa8d878b8386c4898587">[email&#160;protected]</a></td>
+                                            <td>631-254-6480</td>
+                                            <td>21-04-2020</td>
+                                            <td>06.00 PM</td>
+                                            <td>Yes</td>
+                                            <td>
+                                                <div class="actions"> <a href="#" class="btn btn-sm bg-success-light mr-2">Staff</a> </div>
+                                            </td>
+                                            <td>
+                                                <div class="actions"> <a href="#" class="btn btn-sm bg-success-light mr-2">Edit</a> </div>
+                                            </td>
+                                            <td class="text-right">
+                                                <div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
+                                                    <div class="dropdown-menu dropdown-menu-right"> <a class="dropdown-item" href="edit-staff.html"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h2 class="table-avatar">
+                                                <a href="profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/profiles/avatar-04.jpg" alt="User Image"></a>
+                                                <a href="profile.html">Richard Brobst <span>#0001</span></a>
+                                                </h2>
+                                            </td>
+                                            <td>ST-002</td>
+                                            <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="42302b212a23302620302d20313602252f232b2e6c212d2f">[email&#160;protected]</a></td>
+                                            <td>830-468-1042</td>
+                                            <td>22-04-2020</td>
+                                            <td>07.00 PM</td>
+                                            <td>Yes</td>
+                                            <td>
+                                                <div class="actions"> <a href="#" class="btn btn-sm bg-success-light mr-2">Staff</a> </div>
+                                            </td>
+                                            <td>
+                                                <div class="actions"> <a href="#" class="btn btn-sm bg-success-light mr-2">Active</a> </div>
+                                            </td>
+                                            <td class="text-right">
+                                                <div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
+                                                    <div class="dropdown-menu dropdown-menu-right"> <a class="dropdown-item" href="edit-staff.html"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h2 class="table-avatar">
+                                                <a href="profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/profiles/avatar-05.jpg" alt="User Image"></a>
+                                                <a href="profile.html">Ellen Thill <span>#0001</span></a>
+                                                </h2>
+                                            </td>
+                                            <td>ST-003</td>
+                                            <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="04616868616a706c6d6868446369656d682a676b69">[email&#160;protected]</a></td>
+                                            <td>508-335-5531</td>
+                                            <td>23-04-2020</td>
+                                            <td>06.00 PM</td>
+                                            <td>Yes</td>
+                                            <td>
+                                                <div class="actions"> <a href="#" class="btn btn-sm bg-success-light mr-2">Staff</a> </div>
+                                            </td>
+                                            <td>
+                                                <div class="actions"> <a href="#" class="btn btn-sm bg-success-light mr-2">Active</a> </div>
+                                            </td>
+                                            <td class="text-right">
+                                                <div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
+                                                    <div class="dropdown-menu dropdown-menu-right"> <a class="dropdown-item" href="edit-staff.html"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h2 class="table-avatar">
+                                                <a href="profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/profiles/avatar-06.jpg" alt="User Image"></a>
+                                                <a href="profile.html">Corina Kelsey <span>#0001</span></a>
+                                                </h2>
+                                            </td>
+                                            <td>ST-004</td>
+                                            <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c9aaa6bba0a7a8a2aca5baacb089aea4a8a0a5e7aaa6a4">[email&#160;protected]</a></td>
+                                            <td>262-260-1170</td>
+                                            <td>21-04-2020</td>
+                                            <td>06.00 PM</td>
+                                            <td>Yes</td>
+                                            <td>
+                                                <div class="actions"> <a href="#" class="btn btn-sm bg-success-light mr-2">Staff</a> </div>
+                                            </td>
+                                            <td>
+                                                <div class="actions"> <a href="#" class="btn btn-sm bg-success-light mr-2">Active</a> </div>
+                                            </td>
+                                            <td class="text-right">
+                                                <div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
+                                                    <div class="dropdown-menu dropdown-menu-right"> <a class="dropdown-item" href="edit-staff.html"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 @endsection
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">New User Vendor</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        <div class="row">
+            <div class="col-lg-12">
+                <form action="" method="post">
+                    @csrf
+                    <div class="row formtype">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Surname</label>
+                                <input class="form-control" type="text" name="surname" placeholder="Surname">
+                            </div>
+                            @error('surname')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>First Name</label>
+                                <input class="form-control" type="text" name="firstname" placeholder="First Name">
+                            </div>
+                            @error('firstname')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="row formtype">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>PSN Number</label>
+                                <input class="form-control" type="text" name="psn_no" placeholder="Surname">
+                            </div>
+                            @error('psn_no')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Category</label>
+                                <select name="category" id="category" class="form-control">
+                                    <option hidden>--------</option>
+                                    <option value="Formal">Formal</option>
+                                    <option value="Non-Formal">Non-Formal</option>
+                                    <option value="Bicycle">Bicycle</option>
+                                    <option value="Motorcycle">Motorcycle</option>
+                                    <option value="Lorry">Lorry</option>
+                                </select>
+                            </div>
+                            @error('category')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="row formtype">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input class="form-control" type="text" name="phone" placeholder="Phone Number">
+                            </div>
+                            @error('phone')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Role</label>
+                                <select name="roles" id="roles" class="form-control">
+                                    <option hidden>--------</option>
+                                    <option value="Admin Manager">Admin Manager</option>
+                                    <option value="Senior Manager">Senior Manager</option>
+                                    <option value="Vendor">Vendor</option>
+                                </select>
+                            </div>
+                            @error('roles')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="row formtype">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input class="form-control" type="password" name="password" placeholder="Password">
+                            </div>
+                            @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Confirm Password</label>
+                                <input class="form-control" type="password_confirmation" name="password_confirmation" placeholder="Confirm Password">
+                            </div>
+                            @error('password_confirmation')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="form-group float-right">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+
+      </div>
+    </div>
+</div>

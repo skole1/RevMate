@@ -15,7 +15,7 @@ Create User | Page
         </div>
         <div class="card">
             <div class="card-body">
-                <div class="row">
+            <div class="row">
             <div class="col-lg-12">
                 @if (session('success'))
                     <div class="alert alert-success">
@@ -87,3 +87,4 @@ Create User | Page
     </div>
 </div>
 @endsection
+
