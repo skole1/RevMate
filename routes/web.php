@@ -19,21 +19,23 @@ use App\Http\Controllers\PagesController;
 // });
 
 ##------------------------Login Route----------------------------------------##
-Route::get('/', [PagesController::class, 'index'])->name('login');
+Route::get('/', [PagesController::class, 'index'])->name('login')->middleware('guest');;
 Route::post('/login', [PagesController::class, 'login'])->name('post.login');
-Route::post('/logout', [PagesController::class, 'logout'])->name('post.logout');
+Route::get('/logout', [PagesController::class, 'logout'])->name('post.logout');
+
 
 
 ##------------------------Dashboard Route----------------------------------------##
-Route::get('/dashboard', [PagesController::class, 'dashboard'])->name('dashboard');
+Route::get('/dashboard', [PagesController::class, 'dashboard'])->name('dashboard')->middleware('auth');
 Route::get('/register', [PagesController::class, 'register'])->name('register');
 Route::post('/createuser', [PagesController::class, 'createuser'])->name('createuser');
-
+Route::get('/edituser/{id}', [PagesController::class, 'edituser'])->name('edituser');
 Route::get('/listofUsers', [PagesController::class, 'listofUsers'])->name('listofUsers');
 Route::get('/forgotPassword', [PagesController::class, 'forgotPassword'])->name('forgotPassword');
 
 ##------------------------Dashboard Route----------------------------------------##
 Route::get('/wallet', [PagesController::class, 'wallet'])->name('wallet');
+Route::post('/postwallet', [PagesController::class, 'postwallet'])->name('post.wallet');
 
 ##------------------------Report Route----------------------------------------##
 Route::get('/report', [PagesController::class, 'report'])->name('report');

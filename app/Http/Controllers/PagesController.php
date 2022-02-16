@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Wallet;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -87,10 +88,54 @@ class PagesController extends Controller
         // return redirect('register')->with('success', 'User Created Successfully');
     }
 
+    public function edituser($id)
+    {
+        $user_1 = User::find($id);
+        return view('auth.listofregisteduser',['user'=>$user_1]);
+    }
+
     public function wallet()
     {
         return view('pages.wallet');
     }
+
+    public function postwallet(Request $request)
+    {
+        $request->validate([
+            'user_id'=> 'required',
+            'name'=> 'required',
+            'location'=> 'required',
+            'sector'=> 'required',
+            'amount'=> 'required',
+            'mode_of_payment'=> 'required',
+            'date_of_payment'=> 'required',
+        ]);
+
+        $wallet = new Wallet;
+        $wallet->user_id = rand(1,100);
+        $wallet->name = $request->name;
+        $wallet->location = $request->location;
+        $wallet->sector = $request->sector;
+        $wallet->amount = $request->amount;
+        $wallet->mode_of_payment = $request->mode_of_payment;
+        $wallet->date_of_payment = $request->date_of_payment;
+        $wallet->save();
+        return redirect('/postwallet')->with('success', 'Wallet Created Successfully');
+
+        // Wallet::create([
+        //     'user_id' => rand(1,100),
+        //     'name' => $request->name,
+        //     'location' => $request->location,
+        //     'sector' => $request->sector,
+        //     'amount' => $request->amount,
+        //     'mode_of_payment' => $request->mode_of_payment,
+        //     'date_of_payment' => $request->date_of_payment
+        // ]);
+
+        // session()->flash('success', 'Wallet Created Successfully');
+        // return redirect()->route('wallet');
+    }
+
 
     public function report()
     {
@@ -112,10 +157,12 @@ class PagesController extends Controller
         return view('pages.slip');
     }
 
+
+
     public function logout()
     {
         auth()->logout();
-        return redirect('/login');
+        return redirect()->route('login');
     }
 }
 

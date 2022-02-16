@@ -56,11 +56,11 @@ Registered Users | Page
                                                 <div class="actions"> <a href="#" class="btn btn-sm bg-success-light mr-2">{{ $user->roles }}</a> </div>
                                             </td>
                                             <td>
-                                                <div class="actions"> <a href="#" class="btn btn-sm bg-success-light mr-2">Edit</a> </div>
+                                                <div class="actions"> <a href="{{ route('edituser', $user->id)}}" class="btn btn-sm bg-success-light mr-2">Edit</a> </div>
                                             </td>
                                             <td class="text-right">
                                                 <div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
-                                                    <div class="dropdown-menu dropdown-menu-right"> <a class="dropdown-item" href="edit-staff.html"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> </div>
+                                                    <div class="dropdown-menu dropdown-menu-right"> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editModal"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> </div>
                                                 </div>
                                             </td>
                                         </tr>
@@ -238,6 +238,150 @@ Registered Users | Page
                     <div class="form-group float-right">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+
+      </div>
+    </div>
+</div>
+
+<!-- Edit Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">New User Vendor</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        <div class="row">
+            <div class="col-lg-12">
+                <form action="{{ route('edituser', $user)}}" method="post">
+                    @csrf
+                    <div class="row formtype">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Surname</label>
+                                <input class="form-control" type="text" name="surname" placeholder="Surname" value="{{ $user->surname }}">
+                            </div>
+                            @error('surname')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>First Name</label>
+                                <input class="form-control" type="text" name="firstname" placeholder="First Name" value="{{ $user->firstname }}">
+                            </div>
+                            @error('firstname')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="row formtype">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>PSN Number</label>
+                                <input class="form-control" type="text" name="psn_no" placeholder="Surname" value="{{ $user->psn_no }}">
+                            </div>
+                            @error('psn_no')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Category</label>
+                                <select name="category" id="category" class="form-control" value="{{ $user->category }}">
+                                    <option hidden>--------</option>
+                                    <option value="Formal">Formal</option>
+                                    <option value="Non-Formal">Non-Formal</option>
+                                    <option value="Bicycle">Bicycle</option>
+                                    <option value="Motorcycle">Motorcycle</option>
+                                    <option value="Lorry">Lorry</option>
+                                </select>
+                            </div>
+                            @error('category')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="row formtype">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input class="form-control" type="text" name="phone" placeholder="Phone Number" value="{{ $user->category }}">
+                            </div>
+                            @error('phone')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Role</label>
+                                <select name="roles" id="roles" class="form-control" value="{{ $user->category }}">
+                                    <option hidden>--------</option>
+                                    <option value="Admin Manager">Admin Manager</option>
+                                    <option value="Senior Manager">Senior Manager</option>
+                                    <option value="Vendor">Vendor</option>
+                                </select>
+                            </div>
+                            @error('roles')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="row formtype">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input class="form-control" type="password" name="password" placeholder="Password">
+                            </div>
+                            @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Confirm Password</label>
+                                <input class="form-control" type="password_confirmation" name="password_confirmation" placeholder="Confirm Password">
+                            </div>
+                            @error('password_confirmation')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="form-group float-right">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Update</button>
                     </div>
                 </form>
             </div>

@@ -29,7 +29,7 @@ Login | Page
                             @enderror
                         </div>
                         <div class="form-group">
-                            <input class="form-control" type="text" name="password" placeholder="Password">
+                            <input class="form-control" type="password" name="password" placeholder="Password">
                             @error('password')
                                 <span class="text-danger" role="alert">
                                     <strong>{{ $message }}</strong>
