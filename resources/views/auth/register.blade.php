@@ -23,7 +23,7 @@ Create User | Page
                     </div>
                 @endif
                 {{-- Form Stated Here --}}
-                <form action="{{ route('createuser')}}" method="POST">
+                <form action="{{ route('createuser') }}" method="POST">
                     @csrf
                     <div class="row formtype">
                         <div class="col-md-4">
@@ -61,8 +61,8 @@ Create User | Page
                                 <label>Role</label>
                                 <select name="roles" id="role" class="form-control">
                                     <option hidden>Role</option>
-                                    <option value="Admin Manager">Admin Manager</option>
-                                    <option value="Senior Manager">Senior Manager</option>
+                                    <option value="Admin">Admin Manager</option>
+                                    <option value="Manager">Senior Manager</option>
                                     <option value="Vendor">Vendor</option>
                                 </select>
                             </div>

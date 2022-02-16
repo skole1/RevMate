@@ -6,15 +6,15 @@
                 <li class="list-divider"></li>
                 <li class="submenu"> <a href="#"><i class="fas fa-user"></i> <span>Manage Account </span> <span class="menu-arrow"></span></a>
                     <ul class="submenu_class" style="display: none;">
-                        <li><a href="{{ route('register')}}"> New User </a></li>
-                        <li><a href="{{ route('listofUsers') }}"> Registered User </a></li>
+
+                        <li><a href="{{ route('listofUsers') }}">Registered User </a></li>
                     </ul>
                 </li>
-                <li class="submenu"> <a href="#"><i class="fas fa-key"></i> <span> Rooms </span> <span class="menu-arrow"></span></a>
+                <li class="submenu"> <a href="#"><i class="fas fa-money-bill"></i> <span> Payment </span> <span class="menu-arrow"></span></a>
                     <ul class="submenu_class" style="display: none;">
-                        <li><a href="all-rooms.html">All Rooms </a></li>
-                        <li><a href="edit-room.html"> Edit Rooms </a></li>
-                        <li><a href="add-room.html"> Add Rooms </a></li>
+                        <li><a href="{{ route('wallet')}}">Wallet </a></li>
+                        <li><a href="{{ route('report')}}"> Report </a></li>
+                        <li><a href="{{ route('slip')}}"> Print Slip </a></li>
                     </ul>
                 </li>
                 <li class="submenu"> <a href="#"><i class="fas fa-share-alt"></i> <span> Multi Level </span> <span class="menu-arrow"></span></a>

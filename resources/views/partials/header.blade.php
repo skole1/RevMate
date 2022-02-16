@@ -1,6 +1,6 @@
 <div class="header">
     <div class="header-left">
-        <a href="index.html" class="logo"> <img src="assets/img/hotel_logo.png" width="50" height="70" alt="logo"> <span class="logoclass">HOTEL</span> </a>
+        <a href="index.html" class="logo"> <img src="{{ asset('assets/img/logo.png') }}" width="50" height="70" alt="logo"> <span class="logoclass">GIRS</span> </a>
         <a href="index.html" class="logo logo-small"> <img src="assets/img/hotel_logo.png" alt="Logo" width="30" height="30"> </a>
     </div>
     <a href="javascript:void(0);" id="toggle_btn"> <i class="fe fe-text-align-left"></i> </a>
@@ -78,7 +78,7 @@
                         <h6>Soeng Souy</h6>
                         <p class="text-muted mb-0">Administrator</p>
                     </div>
-                </div> <a class="dropdown-item" href="profile.html">My Profile</a> <a class="dropdown-item" href="settings.html">Account Settings</a> <a class="dropdown-item" href="login.html">Logout</a> </div>
+                </div> <a class="dropdown-item" href="{{ route('profile') }}">My Profile</a> <a class="dropdown-item" href="{{ route('setting')}}">Account Settings</a> <a class="dropdown-item" href="{{ route('post.logout')}}">Logout</a> </div>
         </li>
     </ul>
     <div class="top-nav-search">
